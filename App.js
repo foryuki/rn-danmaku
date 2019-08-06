@@ -1,21 +1,32 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView, Dimensions } from 'react-native';
+
+import Danmaku from './src/components/Danmaku'
+
+import { danmakuData } from './src/data'
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <Danmaku data={danmakuData}/>
+      </SafeAreaView>
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: Dimensions.get('window').height,
+    backgroundColor: '#725E82'
   },
+  headerWrapper: {
+    marginTop: 30,
+    backgroundColor: '#eee'
+  },
+  title: {
+    paddingVertical: 10,
+    fontSize: 30,
+    textAlign: 'center'
+  }
 });
